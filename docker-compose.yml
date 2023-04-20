@@ -7,7 +7,7 @@ services:
     ports:                              # 映射端口
       - "24000:8080"
     volumes:
-      - ./.env:/.env
+      - ./conf/application.yml:/package/sean-api/conf/application.yml
   web:                                  # 前端node容器(运行nginx中的Vue项目)
     image: zhangtao25/sean:dev
     container_name: sean    # 容器名为'xiao-xiao-su-web'
