@@ -1,13 +1,11 @@
 version: '3'
 services:
   api:                                  # 后端springboot容器
-    image: zhangtao25/sean-api:main
+    image: zhangtao25/sean-web:main
     container_name: sean-api    # 容器名为'xiao-xiao-su-api'
     restart: always                     # 重启策略: 容器退出时总是重启容器
     ports:                              # 映射端口
       - "24000:8080"
-    volumes:
-      - ./conf/application.yml:/app/conf/application.yml
   web:                                  # 前端node容器(运行nginx中的Vue项目)
     image: zhangtao25/sean:main
     container_name: sean    # 容器名为'xiao-xiao-su-web'
